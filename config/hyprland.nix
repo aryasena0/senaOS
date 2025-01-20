@@ -185,8 +185,8 @@ in with lib; {
       bind = ,XF86AudioPause, exec, playerctl play-pause
       bind = ,XF86AudioNext, exec, playerctl next
       bind = ,XF86AudioPrev, exec, playerctl previous
-      bind = ,XF86MonBrightnessDown,exec,brightnessctl set 5%-
-      bind = ,XF86MonBrightnessUp,exec,brightnessctl set +5%
+      bind = ,XF86MonBrightnessDown,exec,brightnessctl -d amdgpu_bl0 set 5%-
+      bind = ,XF86MonBrightnessUp,exec,brightnessctl -d amdgpu_bl0 set 5%+
     ''];
   };
 }
