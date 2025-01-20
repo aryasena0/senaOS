@@ -415,6 +415,7 @@ in {
 
   # Virtualization / Containers
   hardware.nvidia-container-toolkit.enable = true;
+  hardware.nvidia.datacenter.enable = true;
   virtualisation.libvirtd.enable = true;
   virtualisation.podman = {
     enable = true;
