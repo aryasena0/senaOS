@@ -2,7 +2,7 @@
 
 let
   inherit (import ../hosts/${host}/variables.nix)
-    browser terminal extraMonitorSettings keyboardLayout;
+    browser terminal monitorSettings keyboardLayout;
 in with lib; {
   wayland.windowManager.hyprland = {
     enable = true;
@@ -30,8 +30,7 @@ in with lib; {
       exec-once = nm-applet --indicator
       exec-once = lxqt-policykit-agent
       exec-once = sleep 1.5 && swww img /home/${username}/Pictures/Wallpapers/marmalade.png
-      monitor=,preferred,auto,1
-      ${extraMonitorSettings}
+      ${monitorSettings}
       general {
         gaps_in = 6
         gaps_out = 8
