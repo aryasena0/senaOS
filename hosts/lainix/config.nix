@@ -102,11 +102,11 @@ in
 
   # Extra Module Options
   drivers.amdgpu.enable = true;
-  drivers.nvidia.enable = false;
+  drivers.nvidia.enable = true;
   drivers.nvidia-prime = {
-    enable = false;
-    intelBusID = "";
-    nvidiaBusID = "";
+    enable = true;
+    amdgpuBusID = "6:0:0";
+    nvidiaBusID = "1:0:0";
   };
   drivers.intel.enable = false;
   vm.guest-services.enable = false;
@@ -118,7 +118,7 @@ in
   networking.timeServers = options.networking.timeServers.default ++ [ "pool.ntp.org" ];
 
   # Set your time zone.
-  time.timeZone = "America/Chicago";
+  time.timeZone = "Asua/Jakarta";
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
@@ -136,6 +136,7 @@ in
   };
 
   programs = {
+    tmux.enable = true;
     firefox.enable = false;
     starship = {
       enable = true;
@@ -237,6 +238,25 @@ in
   };
 
   environment.systemPackages = with pkgs; [
+    podman
+    podman-tui
+    podman-podman-compose
+
+    bun
+    fnm
+
+    rustup
+    go
+    gleam
+
+    flyctl
+    firectl
+    firecracker
+    firejail
+
+    yazi
+    zoxide
+
     vim
     wget
     killall
@@ -454,6 +474,7 @@ in
   };
 
   # Virtualization / Containers
+  hardware.nvidia-container-toolkit.enable = true;
   virtualisation.libvirtd.enable = true;
   virtualisation.podman = {
     enable = true;

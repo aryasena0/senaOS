@@ -19,10 +19,13 @@ in
         "libvirtd"
         "scanner"
         "lp"
+        "video"
+        "audio"
       ];
       shell = pkgs.bash;
       ignoreShellProgramCheck = true;
       packages = with pkgs; [
+        btop
       ];
     };
     # "newuser" = {
