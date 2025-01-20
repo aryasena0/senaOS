@@ -2,6 +2,7 @@
   pkgs,
   username,
   host,
+  lib,
   ...
 }:
 let
@@ -233,7 +234,7 @@ in
           hide_cursor = true;
           no_fade_in = false;
         };
-        background = [
+        background = lib.mkForce [
           {
             path = "/home/${username}/Pictures/Wallpapers/marmalade.png";
             blur_passes = 3;
