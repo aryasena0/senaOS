@@ -2,6 +2,13 @@
 
 let inherit (import ./variables.nix) gitUsername;
 in {
+  # VM tests user
+  users.users.nixosvmtest.isSystemUser = true ;
+  users.users.nixosvmtest.initialPassword = "test";
+  users.users.nixosvmtest.group = "nixosvmtest";
+  users.groups.nixosvmtest = {};
+
+  # Real human hot ai haha
   users.users = {
     "${username}" = {
       homeMode = "755";
@@ -14,11 +21,6 @@ in {
       ignoreShellProgramCheck = true;
       packages = with pkgs; [ btop ];
     };
-  # VM tests user
-  users.users.nixosvmtest.isSystemUser = true ;
-  users.users.nixosvmtest.initialPassword = "test";
-  users.users.nixosvmtest.group = "nixosvmtest";
-  users.groups.nixosvmtest = {};
     # "newuser" = {
     #   homeMode = "755";
     #   isNormalUser = true;
