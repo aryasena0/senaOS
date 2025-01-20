@@ -416,7 +416,6 @@ in {
   # Virtualization / Containers
   hardware.nvidia-container-toolkit.enable = true;
   hardware.nvidia.datacenter.enable = true;
-  systemd.services.nvidia-fabricmanager.serviceConfig = lib.mkDefault;
   virtualisation.libvirtd.enable = true;
   virtualisation.podman = {
     enable = true;
