@@ -21,10 +21,10 @@ in {
         luajitPackages.lua-lsp
         nil
         rust-analyzer
-        #nodePackages.bash-language-server
         yaml-language-server
         pyright
         marksman
+        nixd
       ];
       plugins = with pkgs.vimPlugins; [
         alpha-nvim
