@@ -253,7 +253,7 @@ in
             valign = "center";
           }
         ];
-        input-field = [
+        input-field = lib.mkForce [
           {
             size = "200, 50";
             position = "0, -80";
