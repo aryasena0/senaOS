@@ -1,28 +1,19 @@
-{ config, pkgs, lib, ... }:
-{
-  imports = [
-    ./kernel
-    ./mesa
-    ./peripheral-firmware
-    ./boot-m1n1
-    ./sound
-  ];
+{ config, pkgs, lib, ... }: {
+  imports = [ ./kernel ./mesa ./peripheral-firmware ./boot-m1n1 ./sound ];
 
-  config = let
-      cfg = config.hardware.asahi;
-    in lib.mkIf cfg.enable {
-      nixpkgs.overlays = lib.mkBefore [ cfg.overlay ];
+  config = let cfg = config.hardware.asahi;
+  in lib.mkIf cfg.enable {
+    nixpkgs.overlays = lib.mkBefore [ cfg.overlay ];
 
-      hardware.asahi.pkgs =
-        if cfg.pkgsSystem != "aarch64-linux"
-        then
-          import (pkgs.path) {
-            crossSystem.system = "aarch64-linux";
-            localSystem.system = cfg.pkgsSystem;
-            overlays = [ cfg.overlay ];
-          }
-        else pkgs;
-    };
+    hardware.asahi.pkgs = if cfg.pkgsSystem != "aarch64-linux" then
+      import (pkgs.path) {
+        crossSystem.system = "aarch64-linux";
+        localSystem.system = cfg.pkgsSystem;
+        overlays = [ cfg.overlay ];
+      }
+    else
+      pkgs;
+  };
 
   options.hardware.asahi = {
     enable = lib.mkOption {

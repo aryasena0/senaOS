@@ -1,7 +1,7 @@
-{ options, config, pkgs, lib, ... }:
-{
+{ options, config, pkgs, lib, ... }: {
   config = let
-    isMode = mode: (config.hardware.asahi.useExperimentalGPUDriver
+    isMode = mode:
+      (config.hardware.asahi.useExperimentalGPUDriver
         && config.hardware.asahi.experimentalGPUInstallMode == mode);
   in lib.mkIf config.hardware.asahi.enable (lib.mkMerge [
     {
@@ -18,11 +18,12 @@
     (lib.mkIf config.hardware.asahi.useExperimentalGPUDriver (
       # install the drivers
       if builtins.hasAttr "graphics" options.hardware then {
-        hardware.graphics.package = config.hardware.asahi.pkgs.mesa-asahi-edge.drivers;
+        hardware.graphics.package =
+          config.hardware.asahi.pkgs.mesa-asahi-edge.drivers;
       } else { # for 24.05
-        hardware.opengl.package = config.hardware.asahi.pkgs.mesa-asahi-edge.drivers;
-      })
-    )
+        hardware.opengl.package =
+          config.hardware.asahi.pkgs.mesa-asahi-edge.drivers;
+      }))
     (lib.mkIf config.hardware.asahi.useExperimentalGPUDriver {
       # required for in-kernel GPU driver
       hardware.asahi.withRust = true;
@@ -30,11 +31,10 @@
     (lib.mkIf (isMode "replace") {
       # replace the Mesa linked into system packages with the Asahi version
       # without rebuilding them to avoid rebuilding the world.
-      system.replaceRuntimeDependencies = [
-        { original = pkgs.mesa;
-          replacement = config.hardware.asahi.pkgs.mesa-asahi-edge;
-        }
-      ];
+      system.replaceRuntimeDependencies = [{
+        original = pkgs.mesa;
+        replacement = config.hardware.asahi.pkgs.mesa-asahi-edge;
+      }];
     })
     (lib.mkIf (isMode "overlay") {
       # replace the Mesa used in Nixpkgs with the Asahi version using an overlay,
@@ -43,7 +43,10 @@
       nixpkgs.overlays = [
         (final: prev: {
           # prevent cross-built Mesas that might be evaluated using this config (e.g. Steam emulation via box64) from using the special Asahi Mesa
-          mesa = if prev.targetPlatform.isAarch64 then final.mesa-asahi-edge else prev.mesa;
+          mesa = if prev.targetPlatform.isAarch64 then
+            final.mesa-asahi-edge
+          else
+            prev.mesa;
         })
       ];
     })

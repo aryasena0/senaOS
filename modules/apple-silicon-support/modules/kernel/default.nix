@@ -1,15 +1,12 @@
 # the Asahi Linux kernel and options that must go along with it
 
-{ config, pkgs, lib, ... }:
-{
+{ config, pkgs, lib, ... }: {
   config = lib.mkIf config.hardware.asahi.enable {
-    boot.kernelPackages = let
-      pkgs' = config.hardware.asahi.pkgs;
-    in
-      pkgs'.linux-asahi.override {
-        _kernelPatches = config.boot.kernelPatches;
-        withRust = config.hardware.asahi.withRust;
-      };
+    boot.kernelPackages = let pkgs' = config.hardware.asahi.pkgs;
+    in pkgs'.linux-asahi.override {
+      _kernelPatches = config.boot.kernelPatches;
+      withRust = config.hardware.asahi.withRust;
+    };
 
     # we definitely want to use CONFIG_ENERGY_MODEL, and
     # schedutil is a prerequisite for using it
