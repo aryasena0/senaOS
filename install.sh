@@ -9,4 +9,4 @@ NIX_CONFIG="experimental-features = nix-command flakes"
 
 echo "-----"
 
-sudo nixos-rebuild switch --flake ~/zaneyos/#lainix
+sudo nixos-rebuild switch --flake ~/zaneyos/#lainix --install-bootloader
