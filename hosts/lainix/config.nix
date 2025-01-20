@@ -94,8 +94,8 @@ in {
   drivers.nvidia.enable = true;
   drivers.nvidia-prime = {
     enable = true;
-    amdgpuBusID = "6:0:0";
-    nvidiaBusID = "1:0:0";
+    amdgpuBusID = "PCI:6:0:0";
+    nvidiaBusID = "PCI:1:0:0";
   };
   drivers.intel.enable = false;
   vm.guest-services.enable = false;
