@@ -89,13 +89,10 @@ in with lib; {
       }
       decoration {
         rounding = 10
-        drop_shadow = true
-        shadow_range = 4
-        shadow_render_power = 3 
-        shadow_offset = "0 0"
-        shadow_scale = 1.0
-        col.shadow = "0x1a1a1aee"
-
+        shadow:enabled = true
+        shadow:color = 0x1a1a1aee
+        shadow:range = 4
+        shadow:render_power = 3 
         blur {
             enabled = true
             size = 5
