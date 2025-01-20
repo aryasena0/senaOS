@@ -414,14 +414,14 @@ in {
   };
 
   # Virtualization / Containers
-  hardware.nvidia-container-toolkit.enable = true;
-  hardware.nvidia.datacenter.enable = true;
   virtualisation.libvirtd.enable = true;
+  hardware.nvidia-container-toolkit.enable = true;
   virtualisation.podman = {
     enable = true;
     dockerCompat = true;
     defaultNetwork.settings.dns_enabled = true;
   };
+  # hardware.nvidia.datacenter.enable = true;
   # virtualisation.vmVariant = {
   #   # following configuration is added only when building VM with build-vm
   #   virtualisation = {
