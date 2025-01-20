@@ -5,8 +5,8 @@
 
   # Hyprland Settings
   monitorSettings = ''
-  monitor=eDP-1, 1920x1200@165.00Hz, 0x1080, 1
-  monitor=DP-1, 1920x550@60.02Hz, 0x1080, 1
+  monitor=eDP-1,1920x1200@165.00Hz,0x0,1
+  monitor=DP-1,1920x550@60.02Hz,0x1200,1
   '';
 
   # Waybar Settings
