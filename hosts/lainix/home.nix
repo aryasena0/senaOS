@@ -128,6 +128,7 @@ in {
   };
 
   programs = {
+    home-manager.enable = true;
     gh.enable = true;
     btop = {
       enable = true;
@@ -213,7 +214,6 @@ in {
     #     ".." = "cd ..";
     #   };
   };
-  home-manager.enable = true;
   hyprlock = {
     enable = true;
     settings = {
