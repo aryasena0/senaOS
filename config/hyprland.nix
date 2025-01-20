@@ -185,6 +185,8 @@ in with lib; {
       bind = ,XF86AudioPrev, exec, playerctl previous
       bind = ,XF86MonBrightnessDown,exec,brightnessctl -d amdgpu_bl0 set 5%-
       bind = ,XF86MonBrightnessUp,exec,brightnessctl -d amdgpu_bl0 set 5%+
+      bind = SHIFT,XF86MonBrightnessDown,exec,brightnessctl -d amdgpu_bl1 set 5%-
+      bind = SHIFT,XF86MonBrightnessUp,exec,brightnessctl -d amdgpu_bl1 set 5%+
     ''];
   };
 }
