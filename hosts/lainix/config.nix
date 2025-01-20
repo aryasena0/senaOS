@@ -54,7 +54,7 @@ in
   # Styling Options
   stylix = {
     enable = true;
-    image = ../../config/wallpapers/beautifulmountainscape.jpg;
+    image = ../../config/wallpapers/marmalade.png;
     # base16Scheme = {
     #   base00 = "232136";
     #   base01 = "2a273f";
@@ -240,11 +240,10 @@ in
   environment.systemPackages = with pkgs; [
     podman
     podman-tui
-    podman-podman-compose
+    podman-compose
 
     bun
     fnm
-
     rustup
     go
     gleam
@@ -254,6 +253,7 @@ in
     firecracker
     firejail
 
+    fzf
     yazi
     zoxide
 

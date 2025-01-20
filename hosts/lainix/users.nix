@@ -22,7 +22,7 @@ in
         "video"
         "audio"
       ];
-      shell = pkgs.bash;
+      shell = pkgs.fish;
       ignoreShellProgramCheck = true;
       packages = with pkgs; [
         btop
