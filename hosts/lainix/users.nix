@@ -14,6 +14,11 @@ in {
       ignoreShellProgramCheck = true;
       packages = with pkgs; [ btop ];
     };
+  # VM tests user
+  users.users.nixosvmtest.isSystemUser = true ;
+  users.users.nixosvmtest.initialPassword = "test";
+  users.users.nixosvmtest.group = "nixosvmtest";
+  users.groups.nixosvmtest = {};
     # "newuser" = {
     #   homeMode = "755";
     #   isNormalUser = true;
