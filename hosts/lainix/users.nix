@@ -9,7 +9,8 @@ in {
       description = "${gitUsername}";
       extraGroups =
         [ "networkmanager" "wheel" "libvirtd" "scanner" "lp" "video" "audio" ];
-      shell = pkgs.fish;
+      # shell = pkgs.fish;
+      shell = pkgs.bash;
       ignoreShellProgramCheck = true;
       packages = with pkgs; [ btop ];
     };
