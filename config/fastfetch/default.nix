@@ -14,9 +14,9 @@
         source = ./nixos.png;
         type = "kitty-direct";
         height = 15;
-        width = 35;
+        width = 34;
         padding = {
-          top = 0;
+          top = 2;
           left = 4;
         };
       };
