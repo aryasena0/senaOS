@@ -186,11 +186,11 @@ in with lib; {
       bind = ,XF86MonBrightnessDown,exec,brightnessctl -d amdgpu_bl0 set 5%-
       bind = ,XF86MonBrightnessUp,exec,brightnessctl -d amdgpu_bl0 set 5%+
       # Secondary Monitor
-      bind = ${modifier}SHIFT,minus,exec,brightnessctl -d asus_screenpad set 5%-
-      bind = ${modifier}SHIFT,plus,exec,brightnessctl -d asus_screenpad set 5%+
+      bind = ,0xffc6,exec,brightnessctl -d asus_screenpad set 5%-
+      bind = ,0xffc7,exec,brightnessctl -d asus_screenpad set 5%+
       # Keyboard Backlight
-      bind = ${modifier}SHIFT,topleftsqbracket,exec,brightnessctl -d asus::kbd_backlight set 33%-
-      bind = ${modifier}SHIFT,toprightsqbracket,exec,brightnessctl -d asus::kbd_backlight set 33%+
+      bind = ,0xffc8,exec,brightnessctl -d asus::kbd_backlight set 33%-
+      bind = ,0xffc9,exec,brightnessctl -d asus::kbd_backlight set 33%+
     ''];
   };
 }
