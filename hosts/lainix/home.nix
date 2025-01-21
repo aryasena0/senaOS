@@ -151,7 +151,7 @@ in
       };
     };
     kitty = {
-      font.size = lib.mkForce 13.25;
+      font.size = lib.mkForce 14.25;
       enable = true;
       package = pkgs.kitty;
       settings = {
