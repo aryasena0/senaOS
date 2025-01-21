@@ -50,7 +50,7 @@
         }
         {
           type = "custom";
-          format = " OS -> ZaneyOS 2.2";
+          format = " OS -> senaOS 1.0-stable";
         }
         {
           type = "kernel";
