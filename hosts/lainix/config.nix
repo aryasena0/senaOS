@@ -295,6 +295,10 @@ in {
 
   # Services to start
   services = {
+    tailscale = {
+      enable = true;
+      authKeyFile = "/run/secrets/tailscale_key";
+    };
     xserver = {
       enable = false;
       xkb = {
