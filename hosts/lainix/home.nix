@@ -151,6 +151,7 @@ in
       };
     };
     kitty = {
+      font.size = 12.25;
       enable = true;
       package = pkgs.kitty;
       settings = {
