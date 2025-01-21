@@ -180,6 +180,7 @@ in
         #fi
       '';
       initExtra = ''
+        eval "$(direnv hook bash)"
         fastfetch
         if [ -f $HOME/.bashrc-personal ]; then
           source $HOME/.bashrc-personal
