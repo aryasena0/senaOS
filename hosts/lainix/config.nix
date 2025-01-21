@@ -131,7 +131,7 @@ in {
       nix-direnv.enable = true;
     };
     tmux.enable = true;
-    firefox.enable = false;
+    firefox.enable = true;
     starship = {
       enable = true;
       settings = {
@@ -199,6 +199,7 @@ in {
     gleam
 
     flyctl
+    flintlock
     firectl
     firecracker
     firejail
