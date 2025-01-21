@@ -183,14 +183,14 @@ in with lib; {
       bind = ,XF86AudioNext, exec, playerctl next
       bind = ,XF86AudioPrev, exec, playerctl previous
       # Main Monitor
-      bind = ,XF86MonBrightnessDown,exec,brightnessctl -d amdgpu_bl0 set 5%- && brightnessctl -d amdgpu_bl0 set 5%-
-      bind = ,XF86MonBrightnessUp,exec,brightnessctl -d amdgpu_bl0 set 5%+ && brightnessctl -d amdgpu_bl0 set 5%+
+      bind = ,XF86MonBrightnessDown,exec,brightnessctl -d amdgpu_bl0 set 5%-
+      bind = ,XF86MonBrightnessUp,exec,brightnessctl -d amdgpu_bl0 set 5%+
       # Secondary Monitor
-      # bind = SHIFT,XF86MonBrightnessDown,exec,brightnessctl asus_screenpad -d set 5%-
-      # bind = SHIFT,XF86MonBrightnessUp,exec,brightnessctl asus_screenpad -d set 5%+
+      bind = ${modifier}SHIFT,minus,exec,brightnessctl -d asus_screenpad set 5%-
+      bind = ${modifier}SHIFT,plus,exec,brightnessctl -d asus_screenpad set 5%+
       # Keyboard Backlight
-      bind = ${modifier}SHIFT,plus,exec,brightnessctl -d asus::kbd_backlight set 1-
-      bind = ${modifier}SHIFT,minus,exec,brightnessctl -d asus::kbd_backlight set 1+
+      bind = ${modifier}SHIFT,topleftsqbracket,exec,brightnessctl -d asus::kbd_backlight set 33%-
+      bind = ${modifier}SHIFT,toprightsqbracket,exec,brightnessctl -d asus::kbd_backlight set 33%+
     ''];
   };
 }
