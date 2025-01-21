@@ -11,7 +11,7 @@
       };
 
       logo = {
-        source = ./nixos.jpg;
+        source = ./nixos.png;
         type = "kitty-direct";
         height = 15;
         width = 30;
