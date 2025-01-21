@@ -126,6 +126,10 @@ in {
   };
 
   programs = {
+    direnv = {
+      enable = true;
+      nix-direnv.enable = true;
+    };
     tmux.enable = true;
     firefox.enable = false;
     starship = {
