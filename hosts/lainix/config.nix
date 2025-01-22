@@ -294,14 +294,18 @@ in {
 
   # Services to start
   services = {
-    # ollama = {
-    #   enable = true;
-    #   acceleration = "cuda";
-    #   loadModels = [ "deepseek-r1:32b" ];
-    # };
+    ollama = {
+      enable = true;
+      acceleration = "cuda";
+      # loadModels = [ "deepseek-r1:32b" ];
+    };
     tailscale = {
       enable = true;
       authKeyFile = "/run/secrets/tailscale_key";
+      extraUpFlags = [
+        "--auth-key=${builtins.readFile /run/secrets/tailscale_key}"
+        "--advertise-exit-node"
+      ];
     };
     xserver = {
       enable = false;
