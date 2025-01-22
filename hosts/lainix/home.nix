@@ -214,7 +214,7 @@ in
         };
         background = lib.mkForce [
           {
-            path = "/home/${username}/Pictures/Wallpapers/marmalade.png";
+            path = "/home/${username}/Pictures/Wallpapers/fushiguro.gif";
             blur_passes = 3;
             blur_size = 8;
           }

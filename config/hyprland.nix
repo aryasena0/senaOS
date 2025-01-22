@@ -29,7 +29,7 @@ in with lib; {
       exec-once = killall -q swaync;sleep .5 && swaync
       exec-once = nm-applet --indicator
       exec-once = lxqt-policykit-agent
-      exec-once = sleep 1.5 && swww img /home/${username}/Pictures/Wallpapers/marmalade.png
+      exec-once = sleep 1.5 && swww img /home/${username}/Pictures/Wallpapers/fushiguro.gif
       ${monitorSettings}
       general {
         gaps_in = 6
