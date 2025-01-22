@@ -56,7 +56,7 @@
           orientation = mkLiteral "horizontal";
           children = map mkLiteral [ "entry" "dummy" "mode-switcher" ];
           background-image =
-            mkLiteral ''url("~/Pictures/Wallpapers/fushiguro.gif", width)'';
+            mkLiteral ''url("~/Pictures/Wallpapers/frieren-himmel.jpeg", width)'';
         };
         "entry" = {
           enabled = true;

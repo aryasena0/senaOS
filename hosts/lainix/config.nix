@@ -43,7 +43,7 @@ in {
   # Styling Options
   stylix = {
     enable = true;
-    image = ../../config/wallpapers/fushiguro.gif;
+    image = ../../config/wallpapers/frieren-himmel.jpeg;
     # base16Scheme = {
     #   base00 = "232136";
     #   base01 = "2a273f";
