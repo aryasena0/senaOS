@@ -108,7 +108,7 @@ in {
     ++ [ "pool.ntp.org" ];
 
   # Set your time zone.
-  time.timeZone = "Asua/Jakarta";
+  time.timeZone = "Asia/Jakarta";
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
