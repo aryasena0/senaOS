@@ -132,10 +132,6 @@ in {
       clean.extraArgs = "--keep-since 4d --keep 3";
       flake = "/home/sena/senaOS";
     };
-    direnv = {
-      enable = true;
-      nix-direnv.enable = true;
-    };
     starship = {
       enable = true;
       settings = {
@@ -283,8 +279,8 @@ in {
   };
 
   environment.variables = {
-    ZANEYOS_VERSION = "2.2";
-    ZANEYOS = "true";
+    SENAOS_VERSION = "2.2";
+    SENAOS = "true";
   };
 
   # Extra Portal Configuration
