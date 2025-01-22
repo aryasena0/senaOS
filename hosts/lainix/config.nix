@@ -130,8 +130,6 @@ in {
       enable = true;
       nix-direnv.enable = true;
     };
-    tmux.enable = true;
-    firefox.enable = true;
     starship = {
       enable = true;
       settings = {
@@ -168,16 +166,16 @@ in {
       enableSSHSupport = true;
     };
     virt-manager.enable = true;
-    steam = {
-      enable = true;
-      gamescopeSession.enable = true;
-      remotePlay.openFirewall = true;
-      dedicatedServer.openFirewall = true;
-    };
-    thunar = {
-      enable = true;
-      plugins = with pkgs.xfce; [ thunar-archive-plugin thunar-volman ];
-    };
+    # steam = {
+    #   enable = true;
+    #   gamescopeSession.enable = true;
+    #   remotePlay.openFirewall = true;
+    #   dedicatedServer.openFirewall = true;
+    # };
+    # thunar = {
+    #   enable = true;
+    #   plugins = with pkgs.xfce; [ thunar-archive-plugin thunar-volman ];
+    # };
   };
 
   nixpkgs.config.allowUnfree = true;
@@ -188,6 +186,7 @@ in {
   };
 
   environment.systemPackages = with pkgs; [
+    appimage-run
     podman
     podman-tui
     podman-compose
@@ -216,7 +215,6 @@ in {
     cmatrix
     lolcat
     htop
-    brave
     libvirt
     lxqt.lxqt-policykit
     lm_sensors
@@ -296,11 +294,11 @@ in {
 
   # Services to start
   services = {
-    ollama = {
-      enable = true;
-      acceleration = "cuda";
-      loadModels = [ "deepseek-r1:32b" ];
-    };
+    # ollama = {
+    #   enable = true;
+    #   acceleration = "cuda";
+    #   loadModels = [ "deepseek-r1:32b" ];
+    # };
     tailscale = {
       enable = true;
       authKeyFile = "/run/secrets/tailscale_key";
@@ -464,5 +462,5 @@ in {
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "24.11"; # Did you read the comment?
+  system.stateVersion = "25.05"; # Did you read the comment?
 }

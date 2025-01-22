@@ -7,12 +7,13 @@
 }:
 let
   inherit (import ./variables.nix) gitUsername gitEmail;
+  aagl-gtk-on-nix = import (builtins.fetchTarball "https://github.com/ezKEa/aagl-gtk-on-nix/archive/main.tar.gz");
 in
 {
   # Home Manager Settings
   home.username = "${username}";
   home.homeDirectory = "/home/${username}";
-  home.stateVersion = "24.11";
+  home.stateVersion = "25.05";
 
   # Import Program Configurations
   imports = [
@@ -20,6 +21,7 @@ in
     ../../config/fastfetch
     ../../config/hyprland.nix
     ../../config/neovim.nix
+    ../../config/tmux.nix
     ../../config/rofi/rofi.nix
     ../../config/rofi/config-emoji.nix
     ../../config/rofi/config-long.nix
@@ -54,6 +56,7 @@ in
   '';
 
   # Install & Configure Git
+  programs.lazygit.enable = true;
   programs.git = {
     enable = true;
     userName = "${gitUsername}";
@@ -115,6 +118,7 @@ in
       inherit pkgs;
       inherit host;
     })
+    aagl-gtk-on-nix.an-anime-game-launcher
   ];
 
   services = {
@@ -141,7 +145,7 @@ in
   };
 
   programs = {
-    tmux.enable = true;
+    firefox.enable = true;
     zed-editor.enable = true;
     gh.enable = true;
     btop = {
@@ -181,6 +185,7 @@ in
       '';
       initExtra = ''
         eval "$(direnv hook bash)"
+        eval "$(fnm env)"
         fastfetch
         if [ -f $HOME/.bashrc-personal ]; then
           source $HOME/.bashrc-personal
