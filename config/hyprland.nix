@@ -62,7 +62,7 @@ in with lib; {
       windowrulev2 = stayfocused, title:^()$,class:^(steam)$
       windowrulev2 = minsize 1 1, title:^()$,class:^(steam)$
       windowrulev2 = opacity 0.9 0.7, class:^(firefox)$
-      windowrulev2 = opacity 0.9 0.7, class:^(thunar)$
+      windowrulev2 = opacity 0.9 0.7, class:^(cider)$
       gestures {
         workspace_swipe = true
         workspace_swipe_fingers = 3
@@ -120,7 +120,7 @@ in with lib; {
       bind = ${modifier},O,exec,obs
       bind = ${modifier},C,exec,hyprpicker -a
       bind = ${modifier},G,exec,gimp
-      bind = ${modifier},T,exec,yazi
+      bind = ${modifier},T,exec,kitty -e yazi
       bind = ${modifier},N,exec,neovide
       bind = ${modifier},M,exec,appimage-run ~/Applications/cider-linux-x64.AppImage
       bind = ${modifier},Q,killactive,
