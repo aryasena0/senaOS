@@ -126,6 +126,12 @@ in {
   };
 
   programs = {
+    nh = {
+      enable = true;
+      clean.enable = true;
+      clean.extraArgs = "--keep-since 4d --keep 3";
+      flake = "/home/sena/senaOS";
+    };
     direnv = {
       enable = true;
       nix-direnv.enable = true;
@@ -179,6 +185,7 @@ in {
   };
 
   nixpkgs.config.allowUnfree = true;
+  # nixpkgs.config.cudaSupport = true;
 
   users = {
     mutableUsers = true;
@@ -296,14 +303,18 @@ in {
   services = {
     ollama = {
       enable = true;
-      acceleration = "cuda";
+      acceleration = "rocm";
+      environmentVariables = {
+        HCC_AMDGPU_TARGET = "gfx1035";
+      };
+      rocmOverrideGfx = "10.3.5";
       # loadModels = [ "deepseek-r1:32b" ];
     };
     tailscale = {
       enable = true;
-      authKeyFile = "/run/secrets/tailscale_key";
+      authKeyFile = "/home/sena/.config/tailscale/auth_key";
       extraUpFlags = [
-        "--auth-key=${builtins.readFile /run/secrets/tailscale_key}"
+        "--auth-key=${builtins.readFile /home/sena/.config/tailscale/auth_key}"
         "--advertise-exit-node"
       ];
     };
