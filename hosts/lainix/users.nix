@@ -19,7 +19,7 @@ in {
       # shell = pkgs.fish;
       shell = pkgs.bash;
       ignoreShellProgramCheck = true;
-      packages = with pkgs; [ telegram-desktop ollama ];
+      packages = with pkgs; [ telegram-desktop ];
     };
     # "newuser" = {
     #   homeMode = "755";
