@@ -56,7 +56,7 @@ export NIX_CONFIG="experimental-features = nix-command flakes"
 echo "[INFO] Set NIX_CONFIG to enable experimental features."
 
 # Update the NixOS flake
-update_flake
+# update_flake
 
 # Rebuild the NixOS system with the updated configuration
 rebuild_system
