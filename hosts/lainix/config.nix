@@ -334,7 +334,7 @@ in {
           # command = "$HOME/.wayland-session"; # start a wayland session directly without a login manager
           command =
             # "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd Hyprland"; # start Hyprland with a TUI login manager
-            "${pkgs.greetd.tuigreet}/bin/tuigreet --time --greeting Woi goblog ahahaha :>"; 
+            "${pkgs.greetd.tuigreet}/bin/tuigreet --time --greeting Woi goblog ahahaha";
         };
       };
     };
