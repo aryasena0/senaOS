@@ -7,7 +7,7 @@
 }:
 let
   inherit (import ./variables.nix) gitUsername gitEmail;
-  aagl-gtk-on-nix = import (builtins.fetchTarball "https://github.com/ezKEa/aagl-gtk-on-nix/archive/main.tar.gz");
+  # aagl-gtk-on-nix = import (builtins.fetchTarball "https://github.com/ezKEa/aagl-gtk-on-nix/archive/main.tar.gz");
 in
 {
   # Home Manager Settings
@@ -118,7 +118,7 @@ in
       inherit pkgs;
       inherit host;
     })
-    aagl-gtk-on-nix.an-anime-game-launcher
+    # aagl-gtk-on-nix.an-anime-game-launcher
   ];
 
   services = {
