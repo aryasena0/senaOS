@@ -200,6 +200,12 @@ in
         cd = "z";
         ".." = "cd ..";
       };
+      plugins = [
+        {
+          name = "plugin-git";
+          src = pkgs.fishPlugins.plugin-git.src;
+        }
+      ];
     };
     direnv = {
       enable = true;
