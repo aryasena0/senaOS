@@ -181,7 +181,6 @@ in {
   };
 
   nixpkgs.config.allowUnfree = true;
-  # nixpkgs.config.cudaSupport = true;
 
   users = {
     mutableUsers = true;
@@ -296,6 +295,13 @@ in {
     ];
   };
 
+  # For tailscale
+  networking.nftables.enable = true;
+  networking.interfaces.tailscale0.useDHCP = lib.mkDefault true;
+  networking.firewall.checkReversePath = "loose";
+
+  # nixpkgs.config.cudaSupport = true;
+
   # Services to start
   services = {
     ollama = {
@@ -309,11 +315,8 @@ in {
     };
     tailscale = {
       enable = true;
+      useRoutingFeatures = "server";
       authKeyFile = "/home/sena/.config/tailscale/auth_key";
-      extraUpFlags = [
-        "--auth-key=${builtins.readFile /home/sena/.config/tailscale/auth_key}"
-        "--advertise-exit-node"
-      ];
     };
     xserver = {
       enable = false;
