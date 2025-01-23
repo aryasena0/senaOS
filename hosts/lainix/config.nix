@@ -398,11 +398,11 @@ in {
   services.pulseaudio.enable = false;
 
   # Display Manager
-  displayManager.ly.enable = true;
+  # services.displayManager.ly.enable = true;
 
   # Cosmic
   services.desktopManager.cosmic.enable = true;
-  services.desktopManager.cosmic-greeter.enable = true;
+  services.displayManager.cosmic-greeter.enable = true;
 
   # Security / Polkit
   security.rtkit.enable = true;
