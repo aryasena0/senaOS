@@ -195,6 +195,8 @@ in
         ls = "eza --icons";
         ll = "eza -lh --icons --grid --group-directories-first";
         la = "eza -lah --icons --grid --group-directories-first";
+        l = "la";
+        md = "mkdir -p";
         cd = "z";
         ".." = "cd ..";
       };

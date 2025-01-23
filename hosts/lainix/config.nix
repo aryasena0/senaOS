@@ -199,6 +199,7 @@ in {
     rustup
     go
     gleam
+    nodejs_23
 
     flyctl
     flintlock
@@ -332,7 +333,8 @@ in {
           # with such a vendor-no-locking script, we can switch to another wayland compositor without modifying greetd's config here.
           # command = "$HOME/.wayland-session"; # start a wayland session directly without a login manager
           command =
-            "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd Hyprland"; # start Hyprland with a TUI login manager
+            # "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd Hyprland"; # start Hyprland with a TUI login manager
+            "${pkgs.greetd.tuigreet}/bin/tuigreet --time --greeting Woi goblog ahahaha :>"; 
         };
       };
     };
@@ -401,7 +403,7 @@ in {
   # services.displayManager.ly.enable = true;
 
   # Cosmic
-  # services.desktopManager.cosmic.enable = true;
+  services.desktopManager.cosmic.enable = true;
   # services.displayManager.cosmic-greeter.enable = true;
 
   # Security / Polkit
@@ -439,11 +441,11 @@ in {
         "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
       ];
     };
-    gc = {
-      automatic = true;
-      dates = "weekly";
-      options = "--delete-older-than 7d";
-    };
+    # gc = {
+    #   automatic = true;
+    #   dates = "weekly";
+    #   options = "--delete-older-than 7d";
+    # };
   };
 
   # Virtualization / Containers
