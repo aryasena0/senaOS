@@ -173,7 +173,7 @@ in
       '';
     };
     starship = {
-      nable = true;
+      enable = true;
       package = pkgs.starship;
     };
     bash.enable = true;
