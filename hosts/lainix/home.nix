@@ -216,7 +216,7 @@ in
         };
         background = lib.mkForce [
           {
-            path = "/home/${username}/Pictures/Wallpapers/frieren-himmel.jpeg";
+            path = "/home/${username}/Pictures/Wallpapers/hoshimi-miyabi.jpg";
             blur_passes = 3;
             blur_size = 8;
           }
