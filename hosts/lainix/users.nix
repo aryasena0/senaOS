@@ -16,8 +16,7 @@ in {
       description = "${gitUsername}";
       extraGroups =
         [ "networkmanager" "wheel" "libvirtd" "scanner" "lp" "video" "audio" ];
-      # shell = pkgs.fish;
-      shell = pkgs.bash;
+      shell = pkgs.fish;
       ignoreShellProgramCheck = true;
       packages = with pkgs; [ telegram-desktop ollama ];
     };

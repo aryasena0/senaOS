@@ -176,6 +176,7 @@ in
       nable = true;
       package = pkgs.starship;
     };
+    bash.enable = true;
     fish = {
       enable = true;
       interactiveShellInit = ''
@@ -201,7 +202,8 @@ in
     direnv = {
       enable = true;
       nix-direnv.enable = true;
-      enableFishIntegration = true;
+      enableBashIntegration = true;
+      enableZshIntegration = false;
     };
     hyprlock = {
       enable = true;
