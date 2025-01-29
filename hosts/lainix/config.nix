@@ -43,7 +43,7 @@ in {
   # Styling Options
   stylix = {
     enable = true;
-    image = ../../config/wallpapers/marmalade.png;
+    image = ../../config/wallpapers/lainix.png;
     # base16Scheme = {
     #   base00 = "232136";
     #   base01 = "2a273f";
@@ -132,10 +132,6 @@ in {
       clean.extraArgs = "--keep-since 4d --keep 3";
       flake = "/home/sena/senaOS";
     };
-    direnv = {
-      enable = true;
-      nix-direnv.enable = true;
-    };
     starship = {
       enable = true;
       settings = {
@@ -203,6 +199,7 @@ in {
     rustup
     go
     gleam
+    nodejs_23
 
     flyctl
     flintlock
@@ -283,8 +280,8 @@ in {
   };
 
   environment.variables = {
-    ZANEYOS_VERSION = "2.2";
-    ZANEYOS = "true";
+    SENAOS_VERSION = "2.2";
+    SENAOS = "true";
   };
 
   # Extra Portal Configuration
@@ -299,24 +296,26 @@ in {
     ];
   };
 
+  # For tailscale
+  networking.nftables.enable = true;
+  networking.interfaces.tailscale0.useDHCP = lib.mkDefault true;
+  networking.firewall.checkReversePath = "loose";
+
+  # nixpkgs.config.cudaSupport = true;
+
   # Services to start
   services = {
-    ollama = {
-      enable = true;
-      acceleration = "rocm";
-      environmentVariables = {
-        HCC_AMDGPU_TARGET = "gfx1035";
-      };
-      rocmOverrideGfx = "10.3.5";
-      # loadModels = [ "deepseek-r1:32b" ];
-    };
+    # ollama = {
+    #   enable = true;
+    #   acceleration = "rocm";
+    #   environmentVariables = { HCC_AMDGPU_TARGET = "gfx1035"; };
+    #   rocmOverrideGfx = "10.3.5";
+    #   # loadModels = [ "deepseek-r1:32b" ];
+    # };
     tailscale = {
       enable = true;
+      useRoutingFeatures = "server";
       authKeyFile = "/home/sena/.config/tailscale/auth_key";
-      extraUpFlags = [
-        "--auth-key=${builtins.readFile /home/sena/.config/tailscale/auth_key}"
-        "--advertise-exit-node"
-      ];
     };
     xserver = {
       enable = false;
@@ -336,7 +335,8 @@ in {
           # with such a vendor-no-locking script, we can switch to another wayland compositor without modifying greetd's config here.
           # command = "$HOME/.wayland-session"; # start a wayland session directly without a login manager
           command =
-            "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd Hyprland"; # start Hyprland with a TUI login manager
+            # "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd Hyprland"; # start Hyprland with a TUI login manager
+            "${pkgs.greetd.tuigreet}/bin/tuigreet --time --greeting 'Woi goblog ahahaha'";
         };
       };
     };
@@ -401,6 +401,13 @@ in {
   # Enable sound with pipewire.
   services.pulseaudio.enable = false;
 
+  # Display Manager
+  # services.displayManager.ly.enable = true;
+
+  # Cosmic
+  services.desktopManager.cosmic.enable = true;
+  # services.displayManager.cosmic-greeter.enable = true;
+
   # Security / Polkit
   security.rtkit.enable = true;
   security.polkit.enable = true;
@@ -436,11 +443,11 @@ in {
         "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
       ];
     };
-    gc = {
-      automatic = true;
-      dates = "weekly";
-      options = "--delete-older-than 7d";
-    };
+    # gc = {
+    #   automatic = true;
+    #   dates = "weekly";
+    #   options = "--delete-older-than 7d";
+    # };
   };
 
   # Virtualization / Containers

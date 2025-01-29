@@ -29,7 +29,7 @@ in with lib; {
       exec-once = killall -q swaync;sleep .5 && swaync
       exec-once = nm-applet --indicator
       exec-once = lxqt-policykit-agent
-      exec-once = sleep 1.5 && swww img /home/${username}/Pictures/Wallpapers/marmalade.png
+      exec-once = sleep 1.5 && swww img /home/${username}/Pictures/Wallpapers/lainix.png
       ${monitorSettings}
       general {
         gaps_in = 6
@@ -108,11 +108,16 @@ in with lib; {
         pseudotile = true
         preserve_split = true
       }
+      # Terminal
       bind = ${modifier},Return,exec,${terminal}
+
+      # Application Launchers
       bind = ${modifier}SHIFT,Return,exec,rofi-launcher
       bind = ${modifier}SHIFT,W,exec,web-search
       bind = ${modifier}ALT,W,exec,wallsetter
       bind = ${modifier}SHIFT,N,exec,swaync-client -rs
+
+      # Common Applications
       bind = ${modifier},W,exec,${browser}
       bind = ${modifier},E,exec,emopicker9000
       bind = ${modifier},S,exec,screenshootin
@@ -123,28 +128,40 @@ in with lib; {
       bind = ${modifier},T,exec,kitty -e yazi
       bind = ${modifier},N,exec,neovide
       bind = ${modifier},M,exec,appimage-run ~/Applications/cider-linux-x64.AppImage
+
+      # Window Management
       bind = ${modifier},Q,killactive,
       bind = ${modifier},P,pseudo,
       bind = ${modifier}SHIFT,I,togglesplit,
       bind = ${modifier},F,fullscreen,
       bind = ${modifier}SHIFT,F,togglefloating,
       bind = ${modifier}SHIFT,C,exit,
-      bind = ${modifier}SHIFT,left,movewindow,l
-      bind = ${modifier}SHIFT,right,movewindow,r
-      bind = ${modifier}SHIFT,up,movewindow,u
-      bind = ${modifier}SHIFT,down,movewindow,d
+
+      # Window Movement (vim-style)
       bind = ${modifier}SHIFT,h,movewindow,l
       bind = ${modifier}SHIFT,l,movewindow,r
       bind = ${modifier}SHIFT,k,movewindow,u
       bind = ${modifier}SHIFT,j,movewindow,d
-      bind = ${modifier},left,movefocus,l
-      bind = ${modifier},right,movefocus,r
-      bind = ${modifier},up,movefocus,u
-      bind = ${modifier},down,movefocus,d
+
+      # Window Movement (arrow keys)
+      bind = ${modifier}SHIFT,left,movewindow,l
+      bind = ${modifier}SHIFT,right,movewindow,r
+      bind = ${modifier}SHIFT,up,movewindow,u
+      bind = ${modifier}SHIFT,down,movewindow,d
+
+      # Focus Movement (vim-style)
       bind = ${modifier},h,movefocus,l
       bind = ${modifier},l,movefocus,r
       bind = ${modifier},k,movefocus,u
       bind = ${modifier},j,movefocus,d
+
+      # Focus Movement (arrow keys)
+      bind = ${modifier},left,movefocus,l
+      bind = ${modifier},right,movefocus,r
+      bind = ${modifier},up,movefocus,u
+      bind = ${modifier},down,movefocus,d
+
+      # Workspace Management
       bind = ${modifier},1,workspace,1
       bind = ${modifier},2,workspace,2
       bind = ${modifier},3,workspace,3
@@ -155,8 +172,12 @@ in with lib; {
       bind = ${modifier},8,workspace,8
       bind = ${modifier},9,workspace,9
       bind = ${modifier},0,workspace,10
+
+      # Special Workspace
       bind = ${modifier}SHIFT,SPACE,movetoworkspace,special
       bind = ${modifier},SPACE,togglespecialworkspace
+
+      # Move Windows to Workspaces
       bind = ${modifier}SHIFT,1,movetoworkspace,1
       bind = ${modifier}SHIFT,2,movetoworkspace,2
       bind = ${modifier}SHIFT,3,movetoworkspace,3
@@ -167,22 +188,31 @@ in with lib; {
       bind = ${modifier}SHIFT,8,movetoworkspace,8
       bind = ${modifier}SHIFT,9,movetoworkspace,9
       bind = ${modifier}SHIFT,0,movetoworkspace,10
+
+      # Workspace Navigation
       bind = ${modifier}CONTROL,right,workspace,e+1
       bind = ${modifier}CONTROL,left,workspace,e-1
-      bind = ${modifier},mouse_down,workspace, e+1
-      bind = ${modifier},mouse_up,workspace, e-1
+      bind = ${modifier},mouse_down,workspace,e+1
+      bind = ${modifier},mouse_up,workspace,e-1
+
+      # Mouse Bindings
       bindm = ${modifier},mouse:272,movewindow
       bindm = ${modifier},mouse:273,resizewindow
+
+      # Alt-Tab Window Cycling
       bind = ALT,Tab,cyclenext
       bind = ALT,Tab,bringactivetotop
+
+      # Media Controls
       bind = ,XF86AudioRaiseVolume,exec,wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+
       bind = ,XF86AudioLowerVolume,exec,wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
-      binde = ,XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
-      bind = ,XF86AudioPlay, exec, playerctl play-pause
-      bind = ,XF86AudioPause, exec, playerctl play-pause
-      bind = ,XF86AudioNext, exec, playerctl next
-      bind = ,XF86AudioPrev, exec, playerctl previous
-      # Main Monitor
+      binde = ,XF86AudioMute,exec,wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
+      bind = ,XF86AudioPlay,exec,playerctl play-pause
+      bind = ,XF86AudioPause,exec,playerctl play-pause
+      bind = ,XF86AudioNext,exec,playerctl next
+      bind = ,XF86AudioPrev,exec,playerctl previous
+
+      # Brightness Controls
       bind = ,XF86MonBrightnessDown,exec,brightnessctl -d amdgpu_bl0 set 5%-
       bind = ,XF86MonBrightnessUp,exec,brightnessctl -d amdgpu_bl0 set 5%+
     ''];

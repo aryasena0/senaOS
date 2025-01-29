@@ -55,8 +55,8 @@
           border-radius = "25px";
           orientation = mkLiteral "horizontal";
           children = map mkLiteral [ "entry" "dummy" "mode-switcher" ];
-          background-image =
-            mkLiteral ''url("~/Pictures/Wallpapers/marmalade.png", width)'';
+          background-image = mkLiteral
+            ''url("~/Pictures/Wallpapers/lainix.png", width)'';
         };
         "entry" = {
           enabled = true;
