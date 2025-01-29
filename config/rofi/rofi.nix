@@ -56,7 +56,7 @@
           orientation = mkLiteral "horizontal";
           children = map mkLiteral [ "entry" "dummy" "mode-switcher" ];
           background-image = mkLiteral
-            ''url("~/Pictures/Wallpapers/hoshimi-miyabi.jpg", width)'';
+            ''url("~/Pictures/Wallpapers/lainix.png", width)'';
         };
         "entry" = {
           enabled = true;

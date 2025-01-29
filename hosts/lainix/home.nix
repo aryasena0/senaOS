@@ -210,7 +210,7 @@ in {
           no_fade_in = false;
         };
         background = lib.mkForce [{
-          path = "/home/${username}/Pictures/Wallpapers/hoshimi-miyabi.jpg";
+          path = "/home/${username}/Pictures/Wallpapers/lainix.png";
           blur_passes = 3;
           blur_size = 8;
         }];

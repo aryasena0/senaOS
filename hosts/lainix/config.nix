@@ -43,7 +43,7 @@ in {
   # Styling Options
   stylix = {
     enable = true;
-    image = ../../config/wallpapers/hoshimi-miyabi.jpg;
+    image = ../../config/wallpapers/lainix.png;
     # base16Scheme = {
     #   base00 = "232136";
     #   base01 = "2a273f";
