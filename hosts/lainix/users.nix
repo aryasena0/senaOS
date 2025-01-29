@@ -18,7 +18,7 @@ in {
         [ "networkmanager" "wheel" "libvirtd" "scanner" "lp" "video" "audio" ];
       shell = pkgs.fish;
       ignoreShellProgramCheck = true;
-      packages = with pkgs; [ telegram-desktop ollama ];
+      packages = with pkgs; [ telegram-desktop ];
     };
     # "newuser" = {
     #   homeMode = "755";

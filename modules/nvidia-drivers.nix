@@ -5,7 +5,7 @@ in {
   options.drivers.nvidia = { enable = mkEnableOption "Enable Nvidia Drivers"; };
 
   config = mkIf cfg.enable {
-    services.xserver.videoDrivers = [ "nvidia" "amdgpu" ];
+    services.xserver.videoDrivers = [ "nvidia" ];
     hardware.nvidia = {
       # Modesetting is required.
       modesetting.enable = true;

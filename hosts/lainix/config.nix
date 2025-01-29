@@ -304,13 +304,13 @@ in {
 
   # Services to start
   services = {
-    ollama = {
-      enable = true;
-      acceleration = "rocm";
-      environmentVariables = { HCC_AMDGPU_TARGET = "gfx1035"; };
-      rocmOverrideGfx = "10.3.5";
-      # loadModels = [ "deepseek-r1:32b" ];
-    };
+    # ollama = {
+    #   enable = true;
+    #   acceleration = "rocm";
+    #   environmentVariables = { HCC_AMDGPU_TARGET = "gfx1035"; };
+    #   rocmOverrideGfx = "10.3.5";
+    #   # loadModels = [ "deepseek-r1:32b" ];
+    # };
     tailscale = {
       enable = true;
       useRoutingFeatures = "server";
