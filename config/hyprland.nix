@@ -110,13 +110,13 @@ in with lib; {
       }
       # Terminal
       bind = ${modifier},Return,exec,${terminal}
-      
+
       # Application Launchers
       bind = ${modifier}SHIFT,Return,exec,rofi-launcher
       bind = ${modifier}SHIFT,W,exec,web-search
       bind = ${modifier}ALT,W,exec,wallsetter
       bind = ${modifier}SHIFT,N,exec,swaync-client -rs
-      
+
       # Common Applications
       bind = ${modifier},W,exec,${browser}
       bind = ${modifier},E,exec,emopicker9000
@@ -128,7 +128,7 @@ in with lib; {
       bind = ${modifier},T,exec,kitty -e yazi
       bind = ${modifier},N,exec,neovide
       bind = ${modifier},M,exec,appimage-run ~/Applications/cider-linux-x64.AppImage
-      
+
       # Window Management
       bind = ${modifier},Q,killactive,
       bind = ${modifier},P,pseudo,
@@ -136,25 +136,25 @@ in with lib; {
       bind = ${modifier},F,fullscreen,
       bind = ${modifier}SHIFT,F,togglefloating,
       bind = ${modifier}SHIFT,C,exit,
-      
+
       # Window Movement (vim-style)
       bind = ${modifier}SHIFT,h,movewindow,l
       bind = ${modifier}SHIFT,l,movewindow,r
       bind = ${modifier}SHIFT,k,movewindow,u
       bind = ${modifier}SHIFT,j,movewindow,d
-      
+
       # Window Movement (arrow keys)
       bind = ${modifier}SHIFT,left,movewindow,l
       bind = ${modifier}SHIFT,right,movewindow,r
       bind = ${modifier}SHIFT,up,movewindow,u
       bind = ${modifier}SHIFT,down,movewindow,d
-      
+
       # Focus Movement (vim-style)
       bind = ${modifier},h,movefocus,l
       bind = ${modifier},l,movefocus,r
       bind = ${modifier},k,movefocus,u
       bind = ${modifier},j,movefocus,d
-      
+
       # Focus Movement (arrow keys)
       bind = ${modifier},left,movefocus,l
       bind = ${modifier},right,movefocus,r
@@ -172,11 +172,11 @@ in with lib; {
       bind = ${modifier},8,workspace,8
       bind = ${modifier},9,workspace,9
       bind = ${modifier},0,workspace,10
-      
+
       # Special Workspace
       bind = ${modifier}SHIFT,SPACE,movetoworkspace,special
       bind = ${modifier},SPACE,togglespecialworkspace
-      
+
       # Move Windows to Workspaces
       bind = ${modifier}SHIFT,1,movetoworkspace,1
       bind = ${modifier}SHIFT,2,movetoworkspace,2
@@ -188,21 +188,21 @@ in with lib; {
       bind = ${modifier}SHIFT,8,movetoworkspace,8
       bind = ${modifier}SHIFT,9,movetoworkspace,9
       bind = ${modifier}SHIFT,0,movetoworkspace,10
-      
+
       # Workspace Navigation
       bind = ${modifier}CONTROL,right,workspace,e+1
       bind = ${modifier}CONTROL,left,workspace,e-1
       bind = ${modifier},mouse_down,workspace,e+1
       bind = ${modifier},mouse_up,workspace,e-1
-      
+
       # Mouse Bindings
       bindm = ${modifier},mouse:272,movewindow
       bindm = ${modifier},mouse:273,resizewindow
-      
+
       # Alt-Tab Window Cycling
       bind = ALT,Tab,cyclenext
       bind = ALT,Tab,bringactivetotop
-      
+
       # Media Controls
       bind = ,XF86AudioRaiseVolume,exec,wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+
       bind = ,XF86AudioLowerVolume,exec,wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
@@ -211,7 +211,7 @@ in with lib; {
       bind = ,XF86AudioPause,exec,playerctl play-pause
       bind = ,XF86AudioNext,exec,playerctl next
       bind = ,XF86AudioPrev,exec,playerctl previous
-      
+
       # Brightness Controls
       bind = ,XF86MonBrightnessDown,exec,brightnessctl -d amdgpu_bl0 set 5%-
       bind = ,XF86MonBrightnessUp,exec,brightnessctl -d amdgpu_bl0 set 5%+

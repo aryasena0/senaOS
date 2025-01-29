@@ -3,10 +3,10 @@
 let inherit (import ./variables.nix) gitUsername;
 in {
   # VM tests user
-  users.users.nixosvmtest.isSystemUser = true ;
+  users.users.nixosvmtest.isSystemUser = true;
   users.users.nixosvmtest.initialPassword = "test";
   users.users.nixosvmtest.group = "nixosvmtest";
-  users.groups.nixosvmtest = {};
+  users.groups.nixosvmtest = { };
 
   # Real human hot ai haha
   users.users = {
