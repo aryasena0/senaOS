@@ -18,7 +18,7 @@ in {
         [ "networkmanager" "wheel" "libvirtd" "scanner" "lp" "video" "audio" ];
       shell = pkgs.fish;
       ignoreShellProgramCheck = true;
-      packages = with pkgs; [ telegram-desktop ];
+      packages = with pkgs; [ telegram-desktop bottles obs-studio ];
     };
     # "newuser" = {
     #   homeMode = "755";

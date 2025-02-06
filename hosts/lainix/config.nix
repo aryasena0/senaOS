@@ -314,8 +314,8 @@ in {
     # };
     tailscale = {
       enable = true;
-      useRoutingFeatures = "server";
-      authKeyFile = "/home/sena/.config/tailscale/auth_key";
+      # useRoutingFeatures = "server";
+      # authKeyFile = "/home/sena/.config/tailscale/auth_key";
     };
     xserver = {
       enable = false;
@@ -336,7 +336,7 @@ in {
           # command = "$HOME/.wayland-session"; # start a wayland session directly without a login manager
           command =
             # "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd Hyprland"; # start Hyprland with a TUI login manager
-            "${pkgs.greetd.tuigreet}/bin/tuigreet --time --greeting 'Woi goblog ahahaha'";
+            "${pkgs.greetd.tuigreet}/bin/tuigreet --cmd Hyprland --time --greeting 'Woi goblog ahahaha'";
         };
       };
     };

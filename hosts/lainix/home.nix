@@ -85,8 +85,8 @@ in {
   };
   qt = {
     enable = true;
-    style.name = "adwaita-dark";
-    platformTheme.name = "gtk3";
+    style.name = lib.mkDefault "adwaita-dark";
+    platformTheme.name = lib.mkDefault "gtk3";
   };
 
   # Scripts
@@ -165,6 +165,10 @@ in {
     bash.enable = true;
     fish = {
       enable = true;
+      shellInit = ''
+        export PNPM_HOME="/home/sena/.local/share/pnpm"
+        export PATH="$PNPM_HOME:$PATH"
+      '';
       interactiveShellInit = ''
         zoxide init fish | source
         fastfetch
